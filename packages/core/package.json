@@ -1,0 +1,40 @@
+{
+    "name": "@acme/core",
+    "private": true,
+    "version": "0.1.0",
+    "license": "MIT",
+    "exports": {
+        ".": "./index.ts"
+    },
+    "scripts": {
+        "clean": "rm -rf .turbo node_modules",
+        "lint": "eslint .",
+        "format": "prettier --check . --ignore-path ../../.gitignore",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "clsx": "^2.0.0",
+        "tailwind-merge": "^2.1.0"
+    },
+    "devDependencies": {
+        "@acme/eslint-config": "workspace:^0.2.0",
+        "@acme/prettier-config": "workspace:^0.1.0",
+        "@acme/tsconfig": "workspace:^0.1.0",
+        "typescript": "^5.3.3"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@acme/eslint-config/base",
+            "@acme/eslint-config/nextjs",
+            "@acme/eslint-config/react"
+        ]
+    },
+    "prettier": "@acme/prettier-config",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "*"
+            ]
+        }
+    }
+}
